@@ -1,0 +1,11 @@
+ol li {
+	padding-top: 10px;
+}
+
+#installation_instructions ol li {
+	padding-bottom: 40px;
+}
+
+#installation_instructions {
+	font-size: 18px;
+}
