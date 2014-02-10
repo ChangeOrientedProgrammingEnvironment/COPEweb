@@ -18,10 +18,10 @@ function loadContent(fileName) {
 					'padding-right' : '10px'
 				})
 				
-				var t = 300;
-				setInterval( function() {
-					$('#copy_button').fadeOut( t, function(){ $(this).fadeIn( t ); } );
-				}, 2*t);
+				//var t = 300;
+				//setInterval( function() {
+				//	$('#copy_button').fadeOut( t, function(){ $(this).fadeIn( t ); } );
+				//}, 2*t);
 			}
 			init();
 		}
