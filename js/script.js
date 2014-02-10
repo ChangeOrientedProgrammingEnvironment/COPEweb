@@ -15,21 +15,15 @@ function loadContent(fileName) {
 			if($('#copy_button')) {
 				ShowLMCButton("http://cope.eecs.oregonstate.edu/client-recorder/", "COPY", null,"js/lmcbutton.swf", 'copy_button')
 				$('#copy_button').css({
-						'padding-right' : '10px'
+					'padding-right' : '10px'
 				})
-					
-				//$('#copy_button').animate(
-					//{opacity:0},200,"linear",function(){
-						//$(this).animate({opacity:1},200);
-						//$(this).fadeIn('slow', function() { } );
-					// }
-				// );
 				
 				var t = 300;
 				setInterval( function() {
 					$('#copy_button').fadeOut( t, function(){ $(this).fadeIn( t ); } );
 				}, 2*t);
 			}
+			init();
 		}
 	});
 	
@@ -38,7 +32,11 @@ function loadContent(fileName) {
 function setPage(page) {
 	
 	if(typeof page != 'string') { // if link is clicked
-		page = '#' + this.href.split('#')[1]; 
+		if(this.href) {
+			page = '#' + this.href.split('#')[1]; 
+		} else {
+			page = '#' + this.id.split('#')[1]; 
+		}
 	} else {
 		if (window.location.hash) {
 			page = window.location.hash
@@ -58,20 +56,21 @@ function setPage(page) {
 	
 	$($('a[href=' + page + ']')[0].parentElement).addClass('active')
 	
-	//currentPage = path;
-	
-   
 }
 
-$(document).ready(function(){
-	
-	setPage(currentPage)
-	
+function init() {
 	$('.header_button').each(function(item) {
 		if(this.href == currentPage) {
 			setPage(currentPage);
 		}
 		this.onclick = setPage;
 	})
+}
+
+$(document).ready(function(){
+	
+	setPage(currentPage)
+	
+	init()
 	
 });
