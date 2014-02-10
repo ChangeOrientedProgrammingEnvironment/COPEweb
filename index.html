@@ -14,7 +14,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="jumbotron-narrow.css" rel="stylesheet">
+    <!-- <link href="css/jumbotron-narrow.css" rel="stylesheet"> -->
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -24,46 +24,46 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    
+    <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="js/lmcbutton.js"></script>
+    
+    <script type="text/javascript" src="js/script.js"></script>
+    
+    
   </head>
 
   <body>
 
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="install.html">Installation instructions</a></li>
-          <li><a href="team.html">Team</a></li>
-          <!--<li><a href="contacts.html">Contacts</a></li>-->
-        </ul>
-        <h3 class="text-muted"> <img src="img/eclipse.png" /> </h3>
-      </div>
+  <div class="container">
+    
+    <div class="header">
+      <ul class="nav nav-pills pull-right">
+        <li class="active"><a href="#home" class="header_button">Home</a></li>
+        <li><a href="#install" class="header_button">Installation instructions</a></li>
+        <li><a href="#team" class="header_button">Team</a></li>
+        <!--<li><a href="contacts.html">Contacts</a></li>-->
+      </ul>
+      <h3 class="text-muted"> <img src="img/eclipse.png" /> </h3>
+    </div>
+    
+    <div class="jumbotron">
+      <img src="img/source.png" style="float: left"/>
+      <h1><b>COPE</b> - <b>C</b>hange-<b>O</b>riented <b>P</b>rogramming <b>E</b>nvironment</h1> <h2>aims to make software changes first class citizens in the development environment</h2>
+      
+      <!-- <p class="lead">COPE is a research project started by <a href="http://research.engr.oregonstate.edu/sev">software evolution research group</a> at the <a href="http://oregonstate.edu">Oregon State University</a> and <a href="collaborators.html">external collaborators</a></p> -->
+      
+      <!--<p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>-->
+    </div>
 
-      <div class="jumbotron">
-        <img src="img/source.png" style="float: left"/>
-        <h1><b>COPE</b> - <b>C</b>hange-<b>O</b>riented <b>P</b>rogramming <b>E</b>nvironment</h1> <h2>aims to make software changes first class citizens in the development environment</h2>
-        
-        <!-- <p class="lead">COPE is a research project started by <a href="http://research.engr.oregonstate.edu/sev">software evolution research group</a> at the <a href="http://oregonstate.edu">Oregon State University</a> and <a href="collaborators.html">external collaborators</a></p> -->
-        
-        <!--<p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>-->
-      </div>
+    <span id="content">
+    </span>
 
-      <div class="row marketing">
-        <div class="col-lg-12">
-        
-        <p>In order to address COPE project goals, we have created ClientRecorder plugin for Eclipse that records source code changes and unit-test runs. Data collected by ClientRecorder will allow us to understand how developers change complex code and use Test-Driven Development practices to structure source code edits.</p>
-        
-        <p>
-        If you use Eclipse for any of your projects, we ask you to install ClientRecorder plugin to help us test plugin. Plugin will record source code changes in your IDE and send collected data to OSU data storage. All you need to do is to install Eclipse plugin and report to cope@engr.orst.edu if you have any problems with the plugin (exceptions, errors, unstable Eclipse, etc). You can find plugin installation instructions here: <a href="install.html">COPE ClientRecorder installation instructions.</a></p>
-        
-        </div>
-      </div>
+    <div class="footer">
+      <p>&copy; OSU 2014</p>
+    </div>
 
-      <div class="footer">
-        <p>&copy; OSU 2014</p>
-      </div>
-
-    </div> <!-- /container -->
+  </div> <!-- /container -->
 
 
     <!-- Bootstrap core JavaScript

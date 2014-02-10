@@ -1,70 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="favicon.png">
 
-    <title>COPE - change oriented programming environment</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="jumbotron-narrow.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-    <script src="js/jquery-1.11.0.js"></script>
-    <script type="text/javascript">
-      $( document ).ready(function() {
-        $('#installation_instructions').hide();
-        $('#uninstallation_instructions').hide();
-      });
-    </script>
-    <script type="text/javascript" src="js/lmcbutton.js"></script>
-  </head>
-
-  <body>
-
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="index.html">Home</a></li>
-          <li class="active"><a href="#">Installation instructions</a></li>
-          <li><a href="team.html">Team</a></li>
-          <!--<li><a href="contacts.html">Contacts</a></li>-->
-        </ul>
-        <h3 class="text-muted"> <img src="img/eclipse.png" /> </h3>
-      </div>
-
-      <div class="jumbotron">
-        <img src="img/source.png" style="float: left"/>
-        <h1><b>COPE</b> - <b>C</b>hange-<b>O</b>riented <b>P</b>rogramming <b>E</b>nvironment</h1> <h2>aims to make software changes first class citizens in the development environment</h2>
-        
-        <!-- <p class="lead">COPE is a research project started by <a href="http://research.engr.oregonstate.edu/sev">software evolution research group</a> at the <a href="http://oregonstate.edu">Oregon State University</a> and <a href="collaborators.html">external collaborators</a></p> -->
-        
-        <!--<p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>-->
-      </div>
-
+      
       <div class="row marketing">
         <div class="col-lg-12">
         
         <h2>COPE ClientRecorder for Eclipse</h2>
         <h4>COPE plugin can be installed using following update-site:</h4>
-        <h3><script type="text/javascript">
-            ShowLMCButton("http://cope.eecs.oregonstate.edu/client-recorder/", "COPY", null, 'js/lmcbutton.swf');
-        </script> http://cope.eecs.oregonstate.edu/client-recorder/ </h3>
+        <h3><span id="copy_button"></span>http://cope.eecs.oregonstate.edu/client-recorder/ </h3>
         
         <h4>If you need help with installing COPE plugin, see installation instructions below</h4>
         <b>Compatibility: </b>
@@ -137,16 +78,3 @@
           </div>
         </div>
       </div>
-
-      <div class="footer">
-        <p>&copy; OSU 2014</p>
-      </div>
-
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-  </body>
-</html>
