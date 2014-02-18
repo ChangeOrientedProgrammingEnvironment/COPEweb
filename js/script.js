@@ -56,6 +56,7 @@ function setPage(page) {
 	
 	$($('a[href=' + page + ']')[0].parentElement).addClass('active')
 	
+	init()
 }
 
 function init() {
@@ -72,5 +73,8 @@ $(document).ready(function(){
 	setPage(currentPage)
 	
 	init()
+	
+	//$('#footer').css('margin-top',$(document).height() - ($('#header').height() + $('#content').height()  ) - $('#footer').height());
+	//$('#footer').width($('#content').width());
 	
 });
