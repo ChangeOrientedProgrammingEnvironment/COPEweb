@@ -39,43 +39,7 @@ function setHeaderButton(pageName) {
 	$(pageName).parent().addClass('active')
 }
 
-function setPage(page) {
-	
-	if(typeof page != 'string') { // if link is clicked
-		if(this.href) {
-			page = '#' + this.href.split('#')[1]; 
-		} else {
-			page = '#' + this.id.split('#')[1]; 
-		}
-	} else {
-		if (window.location.hash) {
-			page = window.location.hash
-		}
-	}
-	currentPage = page;
-	
-	if(page) {
-		loadContent(page.substr(1) + '.html')
-	} else {
-		loadContent('home.html')
-	}
-	
-	$('.header_button').each(function(i) {
-		$(this.parentElement).removeClass('active');
-	});
-	
-	$($('a[href=' + page + ']')[0].parentElement).addClass('active')
-	
-	init()
-}
-
 function init() {
-	$('.header_button').each(function(item) {
-		if(this.href == currentPage) {
-			setPage(currentPage);
-		}
-		this.onclick = setPage;
-	})
 	if( $('#installation_instructions') ) {
           $('#installation_instructions').hide();
       }
@@ -97,7 +61,6 @@ function init() {
 
 $(document).ready(function(){
 	
-	//setPage(currentPage)
 	
 	init()
 	
