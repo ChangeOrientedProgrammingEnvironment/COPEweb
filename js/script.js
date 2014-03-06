@@ -1,5 +1,3 @@
-var currentPage = '#home';
-
 function loadHeaderAndFooter() {
 	
 	$.ajax('head.html', {
@@ -70,3 +68,38 @@ $(document).ready(function(){
 	//$('#footer').width($('#content').width());
 	
 });
+
+function validateEmail(email) {
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+function sendEmail(email) {
+	if(!validateEmail(email)) {
+		alert('Please enter valid e-mail');
+	} else {
+		$.ajax({
+			type: "POST",
+			url: "https://mandrillapp.com/api/1.0/messages/send.json",
+			data: {
+				'key': 'm7p9RHXIdNa4M1OkLA1QiQ',
+				'message': {
+				'from_email': 'cope@engr.oregonstate.edu',
+				'to': [
+					{
+						'email': 'cope@engr.oregonstate.edu',
+						'name': 'COPE',
+						'type': 'to'
+					}
+				],
+				'autotext': 'true',
+				'subject': 'COPE for IntelliJ IDEA request',
+				'html': 'Somebody with e-mail <a href="mailto:' + email + '">' + email + '</a> expressed interest in COPE for IntelliJ IDEA!'
+				}
+			}
+		}).done(function(response) {
+			alert('Thanks! We will send you an e-mail once we publish COPE for IntelliJ IDEA');
+			//console.log(response); // if you're into that sorta thing
+		});
+	}
+}
