@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Error report</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <style>
+            code {
+                white-space: pre;
+            }
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            var assignOnClick = function( ) {
+                $('#steps_to_reproduce li input[type=button]').each(function(i, item) {
+                    $(item).click( addInput )
+                })
+            }
+            var addInput = function() {
+                $('#steps_to_reproduce').append( $('#steps_to_reproduce li').last().html() )
+                assignOnClick()
+            }
+
+            $('document').ready(function() {              
+                assignOnClick()
+            } )
+        </script>
+    </head>
+    <body>
+        <form>
+            <table>
+                <tr>
+                    <td><b>IDE:</b></td>
+                    <td>
+                        <select name="ide">
+                            <option value="eclipse">Eclipse</option>
+                            <option value="idea">IntelliJ IDEA</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top"><b>Error description:</b></td>
+                    <td>
+                        <textarea name="error_description" rows="10" cols="40"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <b>Steps to reproduce:</b>
+                    </td>
+                    <td>
+                        <ol id="steps_to_reproduce">
+                            <li>
+                                <input name="step[]" value="" size="30"/>
+                                <input type="button" value="+" />
+                            </li>
+                            <li>
+                                <input name="step[]" value="" size="30"/>
+                                <input type="button" value="+" />
+                            </li>
+                        </ol>
+                        <br />
+                        <textarea name="steps_to_reproduce" rows="10" cols="40"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <b>Stack trace:</b>
+                    </td>
+                    <td>
+                        <textarea name="steps_to_reproduce" rows="10" cols="40"></textarea>    
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

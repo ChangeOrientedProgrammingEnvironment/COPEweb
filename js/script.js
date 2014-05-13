@@ -103,3 +103,32 @@ function sendEmail(email) {
 		});
 	}
 }
+
+function sendErrorReport( ide, stackTrace, attachments) {
+	var html = 
+        // 'Somebody with e-mail <a href="mailto:' + email + '">' + email + '</a> expressed interest in COPE for IntelliJ IDEA!';
+    
+    $.ajax({
+        type: "POST",
+        url: "https://mandrillapp.com/api/1.0/messages/send.json",
+        data: {
+            'key': 'm7p9RHXIdNa4M1OkLA1QiQ',
+            'message': {
+            'from_email': 'cope@engr.oregonstate.edu',
+            'to': [
+                {
+                    'email': 'cope@engr.oregonstate.edu',
+                    'name': 'COPE',
+                    'type': 'to'
+                }
+            ],
+            'autotext': 'true',
+            'subject': 'COPE Error report',
+            'html': html
+            }
+        }
+    }).done(function(response) {
+        alert('Your error report has been successfully submitted. We appreciate your feedback!');
+    });
+    
+}
