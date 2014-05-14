@@ -121,12 +121,12 @@ function sendErrorReportMail( ide, errorDesription, stepsToReproduce, stackTrace
             data: {
                 'key': 'm7p9RHXIdNa4M1OkLA1QiQ',
                 'message': {
-//                    'from_email': 'cope@engr.oregonstate.edu',
-                    'from_email': 'shmarkas@eecs.oregonstate.edu',
+                    'from_email': 'cope@engr.oregonstate.edu',
+//                    'from_email': 'shmarkas@eecs.oregonstate.edu',
                     'to': [
                         {
-//                            'email': 'cope@engr.oregonstate.edu',
-                            'email': 'shmarkas@eecs.oregonstate.edu',
+                            'email': 'cope@engr.oregonstate.edu',
+//                            'email': 'shmarkas@eecs.oregonstate.edu',
                             'name': 'COPE',
                             'type': 'to'
                         }
