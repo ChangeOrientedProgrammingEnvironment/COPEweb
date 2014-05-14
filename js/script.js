@@ -104,16 +104,13 @@ function sendEmail(email) {
 	}
 }
 
-function sendErrorReportMail( ide, errorDesription, stepsToReproduce, stackTrace, callback/*, attachmentContents*/) {
+function sendErrorReportMail( ide, errorDesription, stepsToReproduce, stackTrace, version, callback/*, attachmentContents*/) {
 	$.get( 'errorReportTemplate.html', function ( html ) {
         html = html.replace('${IDE}', ide);
+        html = html.replace('${Version}', version);
         html = html.replace('${ErrorDescription}', errorDesription);
         html = html.replace('${StepsToReproduce}', stepsToReproduce);
         html = html.replace('${StackTrace}', stackTrace);
-//        var images = []
-//        $.each(attachmentContents, function() {
-//            images.push()
-//        })
         
         $.ajax({
             type: "POST",
@@ -122,8 +119,8 @@ function sendErrorReportMail( ide, errorDesription, stepsToReproduce, stackTrace
                 'key': 'm7p9RHXIdNa4M1OkLA1QiQ',
                 'message': {
                     'from_email': 'cope@engr.oregonstate.edu',
-//                    'from_email': 'shmarkas@eecs.oregonstate.edu',
-                    'to': [
+//                    'from_email': 'shmarkas@eecs.oregonstate.edu', 
+                   'to': [
                         {
                             'email': 'cope@engr.oregonstate.edu',
 //                            'email': 'shmarkas@eecs.oregonstate.edu',

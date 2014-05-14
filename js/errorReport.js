@@ -34,6 +34,7 @@ $('document').ready( function() {
         var error_description = '';
         var ide = '';
         var stack_trace = '';
+        var version = '';
         $inputs.each(function() {
             switch(this.name) {
                 case 'step[]': 
@@ -48,14 +49,16 @@ $('document').ready( function() {
                 case 'stack_trace': 
                     stack_trace = $(this).val()
                     break;
+                case 'version': 
+                    version = $(this).val()
+                    break;
             } 
         });
         steps_to_reproduce += '</ol>'
         var callback = function() {
             $('#errorReportForm').trigger("reset");
         }
-        sendErrorReportMail(ide, error_description, steps_to_reproduce, stack_trace, callback ) 
-        
+        sendErrorReportMail( ide, error_description, steps_to_reproduce, stack_trace, version, callback ) 
         return false;
     });
 } )
