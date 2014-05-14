@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.png">
+
+    <title>COPE - change oriented programming environment</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="css/jumbotron-narrow.css" rel="stylesheet"> -->
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+    <script type="text/javascript" src="js/analytics.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="js/lmcbutton.js"></script>
+    
+    <script type="text/javascript">
+       window.pageId = '#error'; 
+    </script>
+    
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/errorReport.js"></script>
+    
+    
+    
+  </head>
+
+  <body>
+
+  <div class="container" id="container">
+    <!-- HEADER  -->
+    <span id="head"></span>
+    
+    <!-- CONTENT -->
+    
+    <form id="errorReportForm">
+            <table>
+                <tr>
+                    <td><b>IDE:</b></td>
+                    <td>
+                        <select name="ide">
+                            <option value="eclipse">Eclipse</option>
+                            <option value="idea">IntelliJ IDEA</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top"><b>Error description:</b></td>
+                    <td>
+                        <textarea name="error_description" rows="10" cols="60"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <b>Steps to reproduce:</b>
+                    </td>
+                    <td valign="top">
+                        <ol id="steps_to_reproduce" style="padding-top: 0px; margin-top: 0px">
+                            <li>
+                                <input name="step[]" value="" size="45"/>
+                            </li>
+                            <li>
+                                <input name="step[]" value="" size="45"/>
+                                <input type="button" value="+" />
+                            </li>
+                        </ol>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <b>Stack trace:</b>
+                    </td>
+                    <td>
+                        <textarea name="stack_trace" rows="10" cols="60"></textarea>    
+                    </td>
+                </tr>
+<!--                <tr>
+                    <td valign="top">
+                        <b>Attachments (jpg,bmp,gif,png):</b>
+                    </td>
+                    <td>
+                        <ul id="upload_images" style="padding-top: 0px; margin-top: 0px; list-style: none">
+                            <li>
+                                <input type="file" name="image[]" style="float: left"/>
+                            </li>
+                            <li style="text-wrap: none;">
+                                <input type="file" name="image[]" style="float: left"/><input type="button" value="+" style="float: left"/>
+                            </li>
+                        </ul>
+                        <br />
+                    </td>
+                </tr>-->
+                <tr>
+                    <td style="padding: 10px 0px"><input type="submit" value="Send error report" /></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+  </div>
+  
+  <!-- FOOTER -->    
+  <div id="bottom"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>

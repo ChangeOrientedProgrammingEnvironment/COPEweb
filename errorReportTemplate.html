@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Error report</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <style>
+            code {
+                white-space: pre;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><b>IDE:</b> ${IDE}</li>
+            <li><b>Error description:</b><br/>
+                ${ErrorDescription}
+            </li>
+            <li><b>Steps to reproduce:</b><br />
+                ${StepsToReproduce}
+            </li>
+            <li><b>Stack trace:</b><br />
+                <code>${StackTrace}</code>
+            </li>
+        </ul>
+    </body>
+</html>

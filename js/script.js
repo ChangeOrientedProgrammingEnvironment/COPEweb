@@ -104,31 +104,42 @@ function sendEmail(email) {
 	}
 }
 
-function sendErrorReport( ide, stackTrace, attachments) {
-	var html = 
-        // 'Somebody with e-mail <a href="mailto:' + email + '">' + email + '</a> expressed interest in COPE for IntelliJ IDEA!';
-    
-    $.ajax({
-        type: "POST",
-        url: "https://mandrillapp.com/api/1.0/messages/send.json",
-        data: {
-            'key': 'm7p9RHXIdNa4M1OkLA1QiQ',
-            'message': {
-            'from_email': 'cope@engr.oregonstate.edu',
-            'to': [
-                {
-                    'email': 'cope@engr.oregonstate.edu',
-                    'name': 'COPE',
-                    'type': 'to'
+function sendErrorReportMail( ide, errorDesription, stepsToReproduce, stackTrace, callback/*, attachmentContents*/) {
+	$.get( 'errorReportTemplate.html', function ( html ) {
+        html = html.replace('${IDE}', ide);
+        html = html.replace('${ErrorDescription}', errorDesription);
+        html = html.replace('${StepsToReproduce}', stepsToReproduce);
+        html = html.replace('${StackTrace}', stackTrace);
+//        var images = []
+//        $.each(attachmentContents, function() {
+//            images.push()
+//        })
+        
+        $.ajax({
+            type: "POST",
+            url: "https://mandrillapp.com/api/1.0/messages/send.json",
+            data: {
+                'key': 'm7p9RHXIdNa4M1OkLA1QiQ',
+                'message': {
+//                    'from_email': 'cope@engr.oregonstate.edu',
+                    'from_email': 'shmarkas@eecs.oregonstate.edu',
+                    'to': [
+                        {
+//                            'email': 'cope@engr.oregonstate.edu',
+                            'email': 'shmarkas@eecs.oregonstate.edu',
+                            'name': 'COPE',
+                            'type': 'to'
+                        }
+                    ],
+                    'autotext': 'true',
+                    'subject': 'COPE Error report',
+                    'html': html
+//                    'images' : images
                 }
-            ],
-            'autotext': 'true',
-            'subject': 'COPE Error report',
-            'html': html
             }
-        }
-    }).done(function(response) {
-        alert('Your error report has been successfully submitted. We appreciate your feedback!');
-    });
-    
+        }).done( function(response) {
+            alert('Your error report has been successfully submitted. We appreciate your feedback!');
+            callback.call();
+        });
+    } )
 }
