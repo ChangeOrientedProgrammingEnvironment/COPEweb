@@ -38,13 +38,20 @@ function setHeaderButton(pageName) {
 }
 
 function init() {
-	if( $('#installation_instructions') ) {
-          $('#installation_instructions').hide();
-      }
-      if( $('#uninstallation_instructions') ) {
-          $('#uninstallation_instructions').hide();
-      }
-      if($('#copy_button')) {
+	if( $('#eclipse_installation_instructions') ) {
+		$('#eclipse_installation_instructions').hide();
+	}
+	if( $('#eclipse_uninstallation_instructions') ) {
+		$('#eclipse_uninstallation_instructions').hide();
+	}
+	if( $('#idea_installation_instructions') ) {
+		$('#idea_installation_instructions').hide();
+	}
+	if( $('#idea_uninstallation_instructions') ) {
+		$('#idea_uninstallation_instructions').hide();
+	}
+	
+	if($('#copy_button')) {
           ShowLMCButton("http://cope.eecs.oregonstate.edu/client-recorder/", "COPY", null,"js/lmcbutton.swf", 'copy_button')
           $('#copy_button').css({
               'padding-right' : '10px'
