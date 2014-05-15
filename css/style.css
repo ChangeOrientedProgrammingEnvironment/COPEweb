@@ -10,9 +10,13 @@ ol li {
 	font-size: 18px;
 }
 
-#project_description p {
+#project_description p, #visualization p{
 	font-size: 20px;
 	font-weight: bold;
+}
+
+#visualization img {
+    width: 100%;
 }
 
 .footer img {
