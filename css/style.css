@@ -32,11 +32,19 @@ ol li {
     background-color:#ddd;
 }
 
-#footer_cope {
+#footer_cope, #version {
 	font-family: Verdana; 
 	font-style: bold; 
 	color: #999; 
 	font-size: 12px;
+}
+#version {
+    margin: 0px 5px
+}
+#version a {
+    color: #999;
+    font-weight: bold;
+    text-decoration: underline
 }
 #container {
 	padding-bottom: 35px;

@@ -13,6 +13,18 @@
       <a href="http://twitter.com/COPE_Research"><img src="img/twitter_logo.png" height="20" /> @COPE_Research</a>
     </div>
     <div style="float: right">
+        <script type="text/javascript" src="version.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                if(document.version != undefined && document.version) {
+                    $('#version_number').html('<a href=#>' + document.version + "</a>")
+                    $("#version").show();
+                } else {
+                    $("#version").hide();
+                }
+            })
+        </script>
+        <span id="version">Version: <span id="version_number"></span></span>
     <a href="http://eecs.oregonstate.edu"><img src="img/osu_logo.png" alt="Oregon State University" /></a>
     <a href="http://cs.illinois.edu"><img src="img/uiuc_logo.png" alt="University of Illinois at Urbana-Champaign" /></a>
     <a href="http://www.cs.utexas.edu"><img src="img/uta_logo.png" alt="University of Texas at Austin" /></a>
