@@ -52,16 +52,17 @@ function init() {
 	}
 	
 	if($('#copy_button')) {
-          ShowLMCButton("http://cope.eecs.oregonstate.edu/client-recorder/", "COPY", null,"js/lmcbutton.swf", 'copy_button')
-          $('#copy_button').css({
-              'padding-right' : '10px'
-          })
-          
-          //var t = 300;
-          //setInterval( function() {
-          //	$('#copy_button').fadeOut( t, function(){ $(this).fadeIn( t ); } );
-          //}, 2*t);
-      }
+	  ShowLMCButton("http://cope.eecs.oregonstate.edu/client-recorder/", "COPY", null,"js/lmcbutton.swf", 'copy_button')
+	  $('#copy_button').css({
+		  'padding-right' : '10px'
+	  })
+	}
+	if($('#idea_copy_button')) {
+	  ShowLMCButton("http://cope.eecs.oregonstate.edu/IDEARecorder/updatePlugins.xml", "COPY", null,"js/lmcbutton.swf", 'idea_copy_button')
+	  $('#idea_copy_button').css({
+		  'padding-right' : '10px'
+	  })
+	}
 }
 
 $(document).ready(function(){
