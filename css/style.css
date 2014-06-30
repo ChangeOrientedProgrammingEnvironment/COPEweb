@@ -52,3 +52,14 @@ ol li {
 #home p {
 	margin-bottom: 25px;
 }
+#publications_list th {
+    text-align: center;
+    padding: 5px;
+    border-bottom: 1px solid grey
+}
+#publications_list td {
+    padding: 5px;
+}
+.conference {
+    text-align: center;
+}
