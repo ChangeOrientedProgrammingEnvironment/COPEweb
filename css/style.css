@@ -63,3 +63,6 @@ ol li {
 .conference {
     text-align: center;
 }
+.nav > li > a {
+    padding: 8px;
+}
