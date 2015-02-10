@@ -17,6 +17,9 @@ ol li {
 
 #visualization img {
     width: 100%;
+     padding:1px;
+   border:1px solid #021a40;
+   background-color:#fff;
 }
 
 .footer img {
